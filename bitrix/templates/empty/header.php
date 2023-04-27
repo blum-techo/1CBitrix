@@ -1,5 +1,5 @@
 <?
-if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     die();
 $IsMainPage = $APPLICATION->GetCurPage(false) == SITE_DIR;
 ?>
@@ -42,28 +42,34 @@ $IsMainPage = $APPLICATION->GetCurPage(false) == SITE_DIR;
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-xs-12">
-                        <?if($IsMainPage):?>
+                        <? if ($IsMainPage): ?>
                         <span class="logo">
-                        <?else:?>
+                        <? else: ?>
                         <a class="logo" href="/">
-                        <?endif?>
+                        <? endif ?>
                             <div class="image">Intervolga.ru</div>
                             <div id="slogan-rand" class="slogan">
                                 <noscript>Сайты и реклама в интернете</noscript>
                             </div>
-                        <?if($IsMainPage):?>
+                        <? if ($IsMainPage): ?>
                         </span>
-                        <?else:?>
+                    <? else: ?>
                         </a>
-                        <?endif?>
+                    <? endif ?>
 
-                        <??>
+                        <? ?>
                     </div>
                     <div class="col-sm-6 col-xs-12">
                         <div class="row">
                             <div class="col-lg-7 col-xs-12 hidden-xs">
                                 <ul class="btn-list-inline">
-                                    Самый лучший производитель одежды
+                                    <? $APPLICATION->IncludeFile(
+                                        SITE_DIR . '/include/slogan.php',
+                                        array(),
+                                        array(
+                                            "MODE" => "text"
+                                        )
+                                    ) ?>
                                 </ul>
                             </div>
                             <div class="col-lg-5 col-xs-12 hidden-print">
@@ -76,8 +82,22 @@ $IsMainPage = $APPLICATION->GetCurPage(false) == SITE_DIR;
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <ul class="phone-list">
-                            <li><i>+7 (495)</i> <b>000-00-00</b></li>
-                            <li><i>+7 (8442)</i> <b>00-00-00</b></li>
+                            <li><? $APPLICATION->IncludeFile(
+                                    SITE_DIR . '/include/phone1.php',
+                                    array(),
+                                    array(
+                                        "MODE" => "html"
+                                    )
+                                ) ?>
+                            </li>
+                            <li><? $APPLICATION->IncludeFile(
+                                    SITE_DIR . '/include/phone2.php',
+                                    array(),
+                                    array(
+                                        "MODE" => "html"
+                                    )
+                                ) ?>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -111,7 +131,7 @@ $IsMainPage = $APPLICATION->GetCurPage(false) == SITE_DIR;
         </div>
     </nav>
 
-    <?if($IsMainPage):?>
+    <? if ($IsMainPage): ?>
 
         <div class="slider-responsive">
             <div class="slider-responsive-panel">
@@ -127,16 +147,20 @@ $IsMainPage = $APPLICATION->GetCurPage(false) == SITE_DIR;
 
 
                     <div class="slider-responsive-inner-item active">
-                        <div class="slider-responsive-inner-item-img" style="background-image: url('<?= SITE_TEMPLATE_PATH ?>/img/slider-main/1.jpg')">
+                        <div class="slider-responsive-inner-item-img"
+                             style="background-image: url('<?= SITE_TEMPLATE_PATH ?>/img/slider-main/1.jpg')">
                             <div class="slider-responsive-inner-item-img-title">
                                 <div class="h2">Одежда для велосипедистов</div>
-                                <div>В следующем году наша компания начинает коллекции одежды для велосипедистов. Не пропустите!</div>
+                                <div>В следующем году наша компания начинает коллекции одежды для велосипедистов. Не
+                                    пропустите!
+                                </div>
                                 <a href="#" class="link">Подробнее...</a>
                             </div>
                         </div>
                     </div>
                     <div class="slider-responsive-inner-item">
-                        <div class="slider-responsive-inner-item-img" style="background-image: url('<?= SITE_TEMPLATE_PATH ?>/img/slider-main/2.jpg')">
+                        <div class="slider-responsive-inner-item-img"
+                             style="background-image: url('<?= SITE_TEMPLATE_PATH ?>/img/slider-main/2.jpg')">
                             <div class="slider-responsive-inner-item-img-title">
                                 <div class="h2">Одежда для бега</div>
                                 <div>Новая коллекция спортивной одежды для бега</div>
@@ -145,24 +169,33 @@ $IsMainPage = $APPLICATION->GetCurPage(false) == SITE_DIR;
                         </div>
                     </div>
                     <div class="slider-responsive-inner-item">
-                        <div class="slider-responsive-inner-item-img" style="background-image: url('<?= SITE_TEMPLATE_PATH ?>/img/slider-main/3.jpg')">
+                        <div class="slider-responsive-inner-item-img"
+                             style="background-image: url('<?= SITE_TEMPLATE_PATH ?>/img/slider-main/3.jpg')">
                             <div class="slider-responsive-inner-item-img-title">
                                 <div class="h2">Ценопад! Успейте купить на этой неделе!</div>
-                                <div>Наступила осень. Желтеют и опадают листья, навевая уныние и тоску о закончившемся лете. Раскрасьте хмурые будни, спешите на осеннюю акцию Ценопад! Лучшие цены осени, только качественные товары!</div>
+                                <div>Наступила осень. Желтеют и опадают листья, навевая уныние и тоску о закончившемся
+                                    лете. Раскрасьте хмурые будни, спешите на осеннюю акцию Ценопад! Лучшие цены осени,
+                                    только качественные товары!
+                                </div>
                                 <a href="#" class="link">Подробнее...</a>
                             </div>
                         </div>
                     </div>
                     <div class="slider-responsive-inner-item">
-                        <div class="slider-responsive-inner-item-img" style="background-image: url('<?= SITE_TEMPLATE_PATH ?>/img/slider-main/4.jpg')">
+                        <div class="slider-responsive-inner-item-img"
+                             style="background-image: url('<?= SITE_TEMPLATE_PATH ?>/img/slider-main/4.jpg')">
                             <div class="slider-responsive-inner-item-img-title">
                                 <div class="h2">Новая коллекция нижнего белья</div>
-                                <div>Девочки, спешите! Новое поступление красивейшего нижнего белья. Первым 100 оптовым покупателям - скидка 10%! Отличное качество, известные бренды. В наличии весь размерный ряд.</div>
+                                <div>Девочки, спешите! Новое поступление красивейшего нижнего белья. Первым 100 оптовым
+                                    покупателям - скидка 10%! Отличное качество, известные бренды. В наличии весь
+                                    размерный ряд.
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="slider-responsive-inner-item">
-                        <div class="slider-responsive-inner-item-img" style="background-image: url('<?= SITE_TEMPLATE_PATH ?>/img/slider-main/5.jpg')">
+                        <div class="slider-responsive-inner-item-img"
+                             style="background-image: url('<?= SITE_TEMPLATE_PATH ?>/img/slider-main/5.jpg')">
                             <div class="slider-responsive-inner-item-img-title">
                                 <div class="h2">Гимнастические купальники</div>
                                 <div>Все для занятия гимнастикой в нашем ассортименте</div>
@@ -202,14 +235,18 @@ $IsMainPage = $APPLICATION->GetCurPage(false) == SITE_DIR;
                             <div class="live-list">
                                 <div class="live-list-item" id="live-1">
                                     <div class="live-item-body image">
-                                        <a class="live-item-img" href=""><img src="<?= SITE_TEMPLATE_PATH ?>/img/live-list/img-1.jpg" alt=""/></a>
+                                        <a class="live-item-img" href=""><img
+                                                    src="<?= SITE_TEMPLATE_PATH ?>/img/live-list/img-1.jpg" alt=""/></a>
                                         <div class="live-item-body-over">
                                             <div class="live-item-description">
-                                                <div class="description">Изобретение относится к области получения и применения...</div>
+                                                <div class="description">Изобретение относится к области получения и
+                                                    применения...
+                                                </div>
                                             </div>
                                             <div class="live-item-label">
                                                 <i class="fa fa fa-twitter"></i>
-                                                <a href="#">Новое веяние в одежде - получено прочное водостойкое соединение</a>
+                                                <a href="#">Новое веяние в одежде - получено прочное водостойкое
+                                                    соединение</a>
                                             </div>
                                             <span class="live-item-data">25 Декабря 2015</span>
                                         </div>
@@ -217,10 +254,12 @@ $IsMainPage = $APPLICATION->GetCurPage(false) == SITE_DIR;
                                 </div>
                                 <div class="live-list-item" id="live-2">
                                     <div class="live-item-body image">
-                                        <a class="live-item-img" href=""><img src="<?= SITE_TEMPLATE_PATH ?>/img/live-list/img-2.jpg" alt=""/></a>
+                                        <a class="live-item-img" href=""><img
+                                                    src="<?= SITE_TEMPLATE_PATH ?>/img/live-list/img-2.jpg" alt=""/></a>
                                         <div class="live-item-body-over">
                                             <div class="live-item-description">
-                                                <div class="description">В следующем году состоится выставка одежды...</div>
+                                                <div class="description">В следующем году состоится выставка одежды...
+                                                </div>
                                             </div>
                                             <div class="live-item-label">
                                                 <i class="fa fa fa-vk"></i>
@@ -234,8 +273,10 @@ $IsMainPage = $APPLICATION->GetCurPage(false) == SITE_DIR;
                                     <div class="live-item-body">
                                         <div class="live-item-body-over">
                                             <div class="live-item-description">
-                                                <div class="description">Для пошива нашей одежды мы стали использовать новую
-                                                    инновационную ткань</div>
+                                                <div class="description">Для пошива нашей одежды мы стали использовать
+                                                    новую
+                                                    инновационную ткань
+                                                </div>
                                             </div>
                                             <div class="live-item-label">
                                                 <a href="#">Мы стали использовать новую ткань</a>
@@ -248,8 +289,10 @@ $IsMainPage = $APPLICATION->GetCurPage(false) == SITE_DIR;
                                     <div class="live-item-body">
                                         <div class="live-item-body-over">
                                             <div class="live-item-description">
-                                                <div class="description">Мы расширяем свой размерный ряд. Теперь наша одежда будет
-                                                    доступна большему количеству людей</div>
+                                                <div class="description">Мы расширяем свой размерный ряд. Теперь наша
+                                                    одежда будет
+                                                    доступна большему количеству людей
+                                                </div>
                                             </div>
                                             <div class="live-item-label">
                                                 <a href="#">Размерный ряд</a>
@@ -260,7 +303,8 @@ $IsMainPage = $APPLICATION->GetCurPage(false) == SITE_DIR;
                                 </div>
                                 <div class="live-list-item" id="live-5">
                                     <div class="live-item-body image">
-                                        <a class="live-item-img" href=""><img src="<?= SITE_TEMPLATE_PATH ?>/img/live-list/img-3.jpg" alt=""/></a>
+                                        <a class="live-item-img" href=""><img
+                                                    src="<?= SITE_TEMPLATE_PATH ?>/img/live-list/img-3.jpg" alt=""/></a>
                                         <div class="live-item-body-over">
                                             <div class="live-item-description">
                                                 <div class="description">С 20 по 23 февраля состоится...</div>
@@ -279,16 +323,16 @@ $IsMainPage = $APPLICATION->GetCurPage(false) == SITE_DIR;
                 </div>
             </div>
         </div>
-    <?endif;?>
+    <? endif; ?>
 
     <div class="container">
-        <?if(!$IsMainPage):?>
-        <ol class="breadcrumb">
-            <li><a href="#">Главная</a></li>
-            <li><a href="#">Раздел</a></li>
-            <li class="active">Детальная страница</li>
-        </ol>
-        <?endif;?>
+        <? if (!$IsMainPage): ?>
+            <ol class="breadcrumb">
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Раздел</a></li>
+                <li class="active">Детальная страница</li>
+            </ol>
+        <? endif; ?>
         <h1><? $APPLICATION->ShowTitle(false); ?></h1>
     </div>
     <div class="container">
