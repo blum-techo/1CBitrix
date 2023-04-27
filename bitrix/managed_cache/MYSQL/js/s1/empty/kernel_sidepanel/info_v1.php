@@ -1,0 +1,1 @@
+<?php $filesInfo = ["/bitrix/js/main/sidepanel/manager.js" => "168251913819354","/bitrix/js/main/sidepanel/slider.js" => "168251913830691",]; ?>
